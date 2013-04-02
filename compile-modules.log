@@ -1,0 +1,61 @@
+scripts/kconfig/conf --silentoldconfig Kconfig
+arch/arm/mach-exynos/Kconfig:884:warning: choice value used outside its choice group
+arch/arm/mach-exynos/Kconfig:885:warning: defaults for choice values not supported
+  CHK     include/linux/version.h
+  CHK     include/generated/utsrelease.h
+  UPD     include/generated/utsrelease.h
+  CC      scripts/mod/empty.o
+  HOSTCC  scripts/mod/mk_elfconfig
+  HOSTCC  scripts/kallsyms
+  Generating include/generated/mach-types.h
+  MKELF   scripts/mod/elfconfig.h
+  HOSTCC  scripts/mod/file2alias.o
+  CC      kernel/bounds.s
+  GEN     include/generated/bounds.h
+  CC      arch/arm/kernel/asm-offsets.s
+  HOSTCC  scripts/conmakehash
+  GEN     include/generated/asm-offsets.h
+  HOSTCC  scripts/recordmcount
+  CALL    scripts/checksyscalls.sh
+  HOSTCC  scripts/mod/modpost.o
+  HOSTCC  scripts/mod/sumversion.o
+  HOSTLD  scripts/mod/modpost
+  CC [M]  drivers/scsi/scsi_wait_scan.o
+  CC [M]  drivers/net/wireless/bcmdhd/bcmsdh.o
+  CC [M]  drivers/staging/westbridge/astoria/switch/cyasswitch.o
+  CC [M]  drivers/net/wireless/bcmdhd/bcmsdh_linux.o
+  CC [M]  drivers/net/wireless/bcmdhd/bcmsdh_sdmmc.o
+  CC [M]  drivers/net/wireless/bcmdhd/bcmsdh_sdmmc_linux.o
+  CC [M]  drivers/net/wireless/bcmdhd/dhd_cdc.o
+  CC [M]  drivers/net/wireless/bcmdhd/dhd_common.o
+  CC [M]  drivers/net/wireless/bcmdhd/dhd_custom_gpio.o
+  CC [M]  drivers/net/wireless/bcmdhd/dhd_custom_sec.o
+  CC [M]  drivers/net/wireless/bcmdhd/dhd_linux.o
+  CC [M]  drivers/net/wireless/bcmdhd/dhd_linux_sched.o
+drivers/net/wireless/bcmdhd/dhd_custom_sec.c: In function 'dhd_read_macaddr':
+drivers/net/wireless/bcmdhd/dhd_custom_sec.c:218: warning: unused variable 'nvfilepath' [-Wunused-variable]
+  CC [M]  drivers/net/wireless/bcmdhd/dhd_cfg80211.o
+  CC [M]  drivers/net/wireless/bcmdhd/dhd_sdio.o
+  CC [M]  drivers/net/wireless/bcmdhd/aiutils.o
+  CC [M]  drivers/net/wireless/bcmdhd/bcmevent.o
+  CC [M]  drivers/net/wireless/bcmdhd/bcmutils.o
+  CC [M]  drivers/net/wireless/bcmdhd/bcmwifi_channels.o
+  CC [M]  drivers/net/wireless/bcmdhd/hndpmu.o
+  CC [M]  drivers/net/wireless/bcmdhd/linux_osl.o
+  CC [M]  drivers/net/wireless/bcmdhd/sbutils.o
+  CC [M]  drivers/net/wireless/bcmdhd/siutils.o
+  CC [M]  drivers/net/wireless/bcmdhd/wl_android.o
+  CC [M]  drivers/net/wireless/bcmdhd/wl_cfg80211.o
+  CC [M]  drivers/net/wireless/bcmdhd/wl_cfgp2p.o
+  CC [M]  drivers/net/wireless/bcmdhd/wldev_common.o
+  CC [M]  drivers/net/wireless/bcmdhd/wl_linux_mon.o
+  CC [M]  drivers/net/wireless/bcmdhd/wl_roam.o
+  LD [M]  drivers/net/wireless/bcmdhd/dhd.o
+  Building modules, stage 2.
+  MODPOST 3 modules
+  CC      drivers/net/wireless/bcmdhd/dhd.mod.o
+  CC      drivers/staging/westbridge/astoria/switch/cyasswitch.mod.o
+  CC      drivers/scsi/scsi_wait_scan.mod.o
+  LD [M]  drivers/staging/westbridge/astoria/switch/cyasswitch.ko
+  LD [M]  drivers/scsi/scsi_wait_scan.ko
+  LD [M]  drivers/net/wireless/bcmdhd/dhd.ko
