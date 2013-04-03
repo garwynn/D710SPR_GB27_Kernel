@@ -238,6 +238,9 @@ else
   cp $KERNELDIR/arch/arm/boot/zImage $KERNELDIR/zImage 
   tar cf ${BASEDIR}/${RELEASE_VER}.tar zImage
   rm -v $KERNELDIR/zImage
+  make clean
+  make distclean
+  make mrproper 
   clear
   echo
   echo
