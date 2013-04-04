@@ -6,19 +6,19 @@ arch/arm/mach-exynos/Kconfig:885:warning: defaults for choice values not support
   CHK     include/generated/utsrelease.h
   UPD     include/generated/utsrelease.h
   HOSTCC  scripts/kallsyms
+  HOSTCC  scripts/conmakehash
   CC      scripts/mod/empty.o
   HOSTCC  scripts/mod/mk_elfconfig
-  MKELF   scripts/mod/elfconfig.h
-  HOSTCC  scripts/mod/file2alias.o
   Generating include/generated/mach-types.h
   CC      kernel/bounds.s
+  MKELF   scripts/mod/elfconfig.h
+  HOSTCC  scripts/mod/file2alias.o
   GEN     include/generated/bounds.h
+  HOSTCC  scripts/recordmcount
   CC      arch/arm/kernel/asm-offsets.s
-  HOSTCC  scripts/conmakehash
+  HOSTCC  scripts/mod/modpost.o
   GEN     include/generated/asm-offsets.h
   CALL    scripts/checksyscalls.sh
-  HOSTCC  scripts/mod/modpost.o
-  HOSTCC  scripts/recordmcount
   HOSTCC  scripts/mod/sumversion.o
   HOSTLD  scripts/mod/modpost
   CC [M]  drivers/net/wireless/bcmdhd/bcmsdh.o
@@ -57,6 +57,6 @@ drivers/net/wireless/bcmdhd/dhd_custom_sec.c:218: warning: unused variable 'nvfi
   CC      drivers/net/wireless/bcmdhd/dhd.mod.o
   CC      drivers/scsi/scsi_wait_scan.mod.o
   CC      drivers/staging/westbridge/astoria/switch/cyasswitch.mod.o
-  LD [M]  drivers/staging/westbridge/astoria/switch/cyasswitch.ko
-  LD [M]  drivers/scsi/scsi_wait_scan.ko
   LD [M]  drivers/net/wireless/bcmdhd/dhd.ko
+  LD [M]  drivers/scsi/scsi_wait_scan.ko
+  LD [M]  drivers/staging/westbridge/astoria/switch/cyasswitch.ko
