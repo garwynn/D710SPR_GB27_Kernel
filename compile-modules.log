@@ -5,25 +5,23 @@ arch/arm/mach-exynos/Kconfig:885:warning: defaults for choice values not support
   UPD     include/linux/version.h
   CHK     include/generated/utsrelease.h
   UPD     include/generated/utsrelease.h
-  HOSTCC  scripts/kallsyms
-  HOSTCC  scripts/conmakehash
   CC      scripts/mod/empty.o
+  HOSTCC  scripts/kallsyms
   HOSTCC  scripts/mod/mk_elfconfig
-  Generating include/generated/mach-types.h
-  CC      kernel/bounds.s
   MKELF   scripts/mod/elfconfig.h
   HOSTCC  scripts/mod/file2alias.o
+  Generating include/generated/mach-types.h
+  CC      kernel/bounds.s
   GEN     include/generated/bounds.h
-  HOSTCC  scripts/recordmcount
   CC      arch/arm/kernel/asm-offsets.s
-  HOSTCC  scripts/mod/modpost.o
+  HOSTCC  scripts/conmakehash
   GEN     include/generated/asm-offsets.h
   CALL    scripts/checksyscalls.sh
+  HOSTCC  scripts/recordmcount
+  HOSTCC  scripts/mod/modpost.o
   HOSTCC  scripts/mod/sumversion.o
   HOSTLD  scripts/mod/modpost
   CC [M]  drivers/net/wireless/bcmdhd/bcmsdh.o
-  CC [M]  drivers/scsi/scsi_wait_scan.o
-  CC [M]  drivers/staging/westbridge/astoria/switch/cyasswitch.o
   CC [M]  drivers/net/wireless/bcmdhd/bcmsdh_linux.o
   CC [M]  drivers/net/wireless/bcmdhd/bcmsdh_sdmmc.o
   CC [M]  drivers/net/wireless/bcmdhd/bcmsdh_sdmmc_linux.o
@@ -32,9 +30,9 @@ arch/arm/mach-exynos/Kconfig:885:warning: defaults for choice values not support
   CC [M]  drivers/net/wireless/bcmdhd/dhd_custom_gpio.o
   CC [M]  drivers/net/wireless/bcmdhd/dhd_custom_sec.o
   CC [M]  drivers/net/wireless/bcmdhd/dhd_linux.o
-  CC [M]  drivers/net/wireless/bcmdhd/dhd_linux_sched.o
 drivers/net/wireless/bcmdhd/dhd_custom_sec.c: In function 'dhd_read_macaddr':
 drivers/net/wireless/bcmdhd/dhd_custom_sec.c:218: warning: unused variable 'nvfilepath' [-Wunused-variable]
+  CC [M]  drivers/net/wireless/bcmdhd/dhd_linux_sched.o
   CC [M]  drivers/net/wireless/bcmdhd/dhd_cfg80211.o
   CC [M]  drivers/net/wireless/bcmdhd/dhd_sdio.o
   CC [M]  drivers/net/wireless/bcmdhd/aiutils.o
@@ -51,6 +49,8 @@ drivers/net/wireless/bcmdhd/dhd_custom_sec.c:218: warning: unused variable 'nvfi
   CC [M]  drivers/net/wireless/bcmdhd/wldev_common.o
   CC [M]  drivers/net/wireless/bcmdhd/wl_linux_mon.o
   CC [M]  drivers/net/wireless/bcmdhd/wl_roam.o
+  CC [M]  drivers/scsi/scsi_wait_scan.o
+  CC [M]  drivers/staging/westbridge/astoria/switch/cyasswitch.o
   LD [M]  drivers/net/wireless/bcmdhd/dhd.o
   Building modules, stage 2.
   MODPOST 3 modules
