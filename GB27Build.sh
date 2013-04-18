@@ -15,11 +15,11 @@ export ARCH=arm
 export DEFCONFIG=garwynn
 export BASEDIR=`readlink -f ..`
 export KERNELDIR=`readlink -f .`
-export INITRAMFS_SOURCE=$BASEDIR/initramfs/E4GT_JB_ramdisk
+export INITRAMFS_SOURCE=$BASEDIR/initramfs/D710_jb_initramfs
 export INITRAMFS_TMP="/tmp/initramfs-e4gt"
 export JOBS=`grep 'processor' /proc/cpuinfo | wc -l`
 export VARIANT=SXTP_Agat_GB27_kernel
-export RELEASE_VER=SXTP_Agat_GB27-v0.3.13
+export RELEASE_VER=SXTP_Agat_GB27-v0.4.0
 export CROSS_COMPILE=~/Kernel/toolchain/prebuilt/arm-eabi-4.4.3/bin/arm-eabi-
 
 ## Command line options that allow overriding defaults, if desired.
@@ -142,7 +142,7 @@ make "${DEFCONFIG}"_defconfig
 . $KERNELDIR/.config
 
 echo -e "	${TXTGRN}Build: Stage 1 building modules ...${TXTCLR}"
-nice -n 10 make -j$JOBS modules 2>&1 | tee compile-modules.log
+nice -n -10 ccache make -j$JOBS modules 2>&1 | tee compile-modules.log
 
 if [ "$?" != "0" ];
 then
@@ -186,7 +186,7 @@ find -name '*.ko' -exec cp -av {} $INITRAMFS_TMP/lib/modules/ \;
 sleep 1
 
 echo -e "	${TXTGRN}Striping Modules to save space${TXTCLR}"
-# ${CROSS_COMPILE}strip --strip-unneeded $INITRAMFS_TMP/lib/modules/*
+#${CROSS_COMPILE}strip --strip-unneeded $INITRAMFS_TMP/lib/modules/*
 sleep 1
 
 # create the initramfs cpio archive
@@ -205,7 +205,7 @@ sleep 1
 echo
 echo -e "	${TXTYLW}Starting final Build: zImage${TXTCLR}"
 echo
-nice -n 10 make -j12 CONFIG_INITRAMFS_SOURCE="$INITRAMFS_TMP.cpio" zImage 2>&1 | tee compile-zImage.log 
+nice -n -10 ccache make -j12 CONFIG_INITRAMFS_SOURCE="$INITRAMFS_TMP.cpio" zImage 2>&1 | tee compile-zImage.log 
 
 if [ "$?" != "0" ];
 then
@@ -238,6 +238,9 @@ else
   cp $KERNELDIR/arch/arm/boot/zImage $KERNELDIR/zImage 
   tar cf ${BASEDIR}/${RELEASE_VER}.tar zImage
   rm -v $KERNELDIR/zImage
+  make clean
+  make distclean
+  make mrproper
   clear
   echo
   echo
