@@ -11,20 +11,20 @@ arch/arm/mach-exynos/Kconfig:885:warning: defaults for choice values not support
   MKELF   scripts/mod/elfconfig.h
   HOSTCC  scripts/mod/file2alias.o
   HOSTCC  scripts/mod/modpost.o
-  HOSTCC  scripts/mod/sumversion.o
-  HOSTCC  scripts/conmakehash
   Generating include/generated/mach-types.h
   CC      kernel/bounds.s
   GEN     include/generated/bounds.h
   CC      arch/arm/kernel/asm-offsets.s
-  HOSTCC  scripts/recordmcount
+  HOSTCC  scripts/mod/sumversion.o
   GEN     include/generated/asm-offsets.h
+  HOSTCC  scripts/conmakehash
   CALL    scripts/checksyscalls.sh
+  HOSTCC  scripts/recordmcount
   HOSTLD  scripts/mod/modpost
   CC [M]  drivers/scsi/scsi_wait_scan.o
   CC [M]  drivers/net/wireless/bcmdhd/bcmsdh.o
-  CC [M]  drivers/net/wireless/bcmdhd/bcmsdh_linux.o
   CC [M]  drivers/staging/westbridge/astoria/switch/cyasswitch.o
+  CC [M]  drivers/net/wireless/bcmdhd/bcmsdh_linux.o
   CC [M]  drivers/net/wireless/bcmdhd/bcmsdh_sdmmc.o
   CC [M]  drivers/net/wireless/bcmdhd/bcmsdh_sdmmc_linux.o
   CC [M]  drivers/net/wireless/bcmdhd/dhd_cdc.o
@@ -32,9 +32,9 @@ arch/arm/mach-exynos/Kconfig:885:warning: defaults for choice values not support
   CC [M]  drivers/net/wireless/bcmdhd/dhd_custom_gpio.o
   CC [M]  drivers/net/wireless/bcmdhd/dhd_custom_sec.o
   CC [M]  drivers/net/wireless/bcmdhd/dhd_linux.o
+  CC [M]  drivers/net/wireless/bcmdhd/dhd_linux_sched.o
 drivers/net/wireless/bcmdhd/dhd_custom_sec.c: In function 'dhd_read_macaddr':
 drivers/net/wireless/bcmdhd/dhd_custom_sec.c:218: warning: unused variable 'nvfilepath' [-Wunused-variable]
-  CC [M]  drivers/net/wireless/bcmdhd/dhd_linux_sched.o
   CC [M]  drivers/net/wireless/bcmdhd/dhd_cfg80211.o
   CC [M]  drivers/net/wireless/bcmdhd/dhd_sdio.o
   CC [M]  drivers/net/wireless/bcmdhd/aiutils.o
@@ -54,9 +54,9 @@ drivers/net/wireless/bcmdhd/dhd_custom_sec.c:218: warning: unused variable 'nvfi
   LD [M]  drivers/net/wireless/bcmdhd/dhd.o
   Building modules, stage 2.
   MODPOST 3 modules
-  CC      drivers/staging/westbridge/astoria/switch/cyasswitch.mod.o
   CC      drivers/net/wireless/bcmdhd/dhd.mod.o
   CC      drivers/scsi/scsi_wait_scan.mod.o
-  LD [M]  drivers/staging/westbridge/astoria/switch/cyasswitch.ko
+  CC      drivers/staging/westbridge/astoria/switch/cyasswitch.mod.o
   LD [M]  drivers/scsi/scsi_wait_scan.ko
+  LD [M]  drivers/staging/westbridge/astoria/switch/cyasswitch.ko
   LD [M]  drivers/net/wireless/bcmdhd/dhd.ko
