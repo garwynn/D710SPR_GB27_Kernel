@@ -5,28 +5,28 @@ arch/arm/mach-exynos/Kconfig:885:warning: defaults for choice values not support
   UPD     include/linux/version.h
   CHK     include/generated/utsrelease.h
   UPD     include/generated/utsrelease.h
+  HOSTCC  scripts/kallsyms
   CC      scripts/mod/empty.o
   HOSTCC  scripts/mod/mk_elfconfig
   MKELF   scripts/mod/elfconfig.h
   HOSTCC  scripts/mod/file2alias.o
-  HOSTCC  scripts/mod/modpost.o
-  HOSTCC  scripts/mod/sumversion.o
-  HOSTCC  scripts/kallsyms
   HOSTCC  scripts/conmakehash
   HOSTCC  scripts/recordmcount
-  HOSTLD  scripts/mod/modpost
   Generating include/generated/mach-types.h
   CC      kernel/bounds.s
   GEN     include/generated/bounds.h
   CC      arch/arm/kernel/asm-offsets.s
+  HOSTCC  scripts/mod/modpost.o
+  HOSTCC  scripts/mod/sumversion.o
   GEN     include/generated/asm-offsets.h
   CALL    scripts/checksyscalls.sh
+  HOSTLD  scripts/mod/modpost
   CC [M]  drivers/net/wireless/bcmdhd/bcmsdh.o
   CC [M]  drivers/net/wireless/bcmdhd/bcmsdh_linux.o
-  CC [M]  drivers/net/wireless/bcmdhd/bcmsdh_sdmmc.o
-  CC [M]  drivers/net/wireless/bcmdhd/bcmsdh_sdmmc_linux.o
   CC [M]  drivers/scsi/scsi_wait_scan.o
   CC [M]  drivers/staging/westbridge/astoria/switch/cyasswitch.o
+  CC [M]  drivers/net/wireless/bcmdhd/bcmsdh_sdmmc.o
+  CC [M]  drivers/net/wireless/bcmdhd/bcmsdh_sdmmc_linux.o
   CC [M]  drivers/net/wireless/bcmdhd/dhd_cdc.o
   CC [M]  drivers/net/wireless/bcmdhd/dhd_common.o
   CC [M]  drivers/net/wireless/bcmdhd/dhd_custom_gpio.o
@@ -58,5 +58,5 @@ drivers/net/wireless/bcmdhd/dhd_custom_sec.c:218: warning: unused variable 'nvfi
   CC      drivers/scsi/scsi_wait_scan.mod.o
   CC      drivers/staging/westbridge/astoria/switch/cyasswitch.mod.o
   LD [M]  drivers/net/wireless/bcmdhd/dhd.ko
-  LD [M]  drivers/staging/westbridge/astoria/switch/cyasswitch.ko
   LD [M]  drivers/scsi/scsi_wait_scan.ko
+  LD [M]  drivers/staging/westbridge/astoria/switch/cyasswitch.ko

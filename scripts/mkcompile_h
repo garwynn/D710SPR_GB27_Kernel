@@ -28,12 +28,12 @@ export LC_ALL
 
 if [ -z "$KBUILD_BUILD_VERSION" ]; then
 	if [ -r .version ]; then
-		VERSION="GB27_v0.4.0"
+		VERSION="GB27_v0.4.1"
 	else
-		VERSION="GB27_v0.4.0"
+		VERSION="GB27_v0.4.1"
 	fi
 else
-	VERSION="GB27_v0.4.0"
+	VERSION="GB27_v0.4.1"
 fi
 
 if [ -z "$KBUILD_BUILD_TIMESTAMP" ]; then

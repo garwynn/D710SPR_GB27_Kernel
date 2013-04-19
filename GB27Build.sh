@@ -19,7 +19,7 @@ export INITRAMFS_SOURCE=$BASEDIR/initramfs/D710_jb_initramfs
 export INITRAMFS_TMP="/tmp/initramfs-e4gt"
 export JOBS=`grep 'processor' /proc/cpuinfo | wc -l`
 export VARIANT=SXTP_Agat_GB27_kernel
-export RELEASE_VER=SXTP_Agat_GB27-v0.4.0
+export RELEASE_VER=SXTP_Agat_GB27-v0.4.1
 export CROSS_COMPILE=~/Kernel/toolchain/prebuilt/arm-eabi-4.4.3/bin/arm-eabi-
 
 ## Command line options that allow overriding defaults, if desired.
